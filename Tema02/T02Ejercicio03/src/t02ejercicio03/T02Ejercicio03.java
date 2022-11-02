@@ -6,8 +6,7 @@ package t02ejercicio03;
 
 /**
  *
- * @author Walter Martín Lopes
- * 
+ * @author wmartinl01
  */
 public class T02Ejercicio03 {
 
