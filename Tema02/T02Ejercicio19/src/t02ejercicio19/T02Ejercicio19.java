@@ -16,13 +16,13 @@ public class T02Ejercicio19 {
     public static void main(String[] args) {
         int a = 3, b = 6, c;
         c = a / b;
-        System.out.println("El valor de c es: "+c); //El resultado es 0 porque c es una variable de tipo int, por lo que no muestra decimales.
+        System.out.println("El valor de c es: "+c); //1El resultado es 0 porque c es una variable de tipo int, por lo que no muestra decimales.
         
         c = a % b;
-        System.out.println("El valor de c es: "+c); // En esta operación se muestra el resto de la operacion a/b.
+        System.out.println("El valor de c es: "+c); //2 En esta operación se muestra el resto de la operacion a/b.
         
-        a++;
-        System.out.println("El valor de a es: "+a); //En esta operación se muestra el valor de a incrementado.
+        //a++;
+       // System.out.println("El valor de a es: "+a); //3En esta operación se muestra el valor de a incrementado.
         
         ++a;
         System.out.println("El valor de a es: "+a); //En esta operación se muestra el valor de a incrementado nuevamente.
