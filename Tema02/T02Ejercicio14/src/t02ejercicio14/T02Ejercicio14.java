@@ -6,7 +6,6 @@
 
 package t02ejercicio14;
 
-import java.math.*;
 /**
  *
  * @author Walter Martín Lopes
