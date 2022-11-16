@@ -20,12 +20,17 @@ public class T02Ejercicio21 {
         
         System.out.println("Por favor, introduzca un número de segundos: ");
         int tiempo = entrada.nextInt();
+        int aux,dias,horas,min,seg;
+        dias = tiempo/86400;
+        aux = tiempo%86400;
+        horas = aux/3600;
+        aux = aux%3600;
+        min = aux/60;
+        seg = aux%60;
         
-        int horas= tiempo/3600;
-        int minutos = (tiempo%3600)/60;
-        int segundos = tiempo%60;
+       
         
-        System.out.println(tiempo+" segundos hacen un total de: "+horas+" horas, "+minutos+" minutos y "+segundos+ " segundos.");
+        System.out.println(tiempo+" segundos hacen un total de: "+dias+" días, "+horas+" horas, "+min+" minutos y "+seg+ " segundos.");
     }
     
 }
