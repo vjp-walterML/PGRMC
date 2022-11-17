@@ -28,6 +28,7 @@ public class GeneradorSaludo extends javax.swing.JFrame {
         panel = new javax.swing.JOptionPane();
         generarSaludo = new javax.swing.JButton();
         nombre = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -37,6 +38,8 @@ public class GeneradorSaludo extends javax.swing.JFrame {
                 generarSaludoActionPerformed(evt);
             }
         });
+
+        jLabel1.setText("Escribe tu nombre");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -48,11 +51,17 @@ public class GeneradorSaludo extends javax.swing.JFrame {
                     .addComponent(generarSaludo, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
                     .addComponent(nombre))
                 .addGap(138, 138, 138))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(152, 152, 152)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addComponent(generarSaludo)
@@ -104,6 +113,7 @@ public class GeneradorSaludo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton generarSaludo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField nombre;
     private javax.swing.JOptionPane panel;
     // End of variables declaration//GEN-END:variables

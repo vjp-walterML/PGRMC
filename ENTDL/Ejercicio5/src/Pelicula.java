@@ -35,7 +35,6 @@ public class Pelicula extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         lista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listaActionPerformed(evt);
@@ -109,6 +108,7 @@ public class Pelicula extends javax.swing.JFrame {
     private void botonAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAñadirActionPerformed
         String pelicula = nombrePelicula.getText();
         lista.addItem(pelicula);
+        nombrePelicula.setText("");
        
     }//GEN-LAST:event_botonAñadirActionPerformed
 
@@ -118,7 +118,7 @@ public class Pelicula extends javax.swing.JFrame {
 
     private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
         if (lista.getItemCount()>0){
-            lista.removeItemAt(lista.getItemCount());
+            lista.removeItemAt(lista.getItemCount()-1);
         } else {
             panel.showMessageDialog(null, "¡Vaya! Parece que la lista no contiene ningún elemento.");
         }
