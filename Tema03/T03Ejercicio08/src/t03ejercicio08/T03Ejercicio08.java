@@ -15,6 +15,7 @@ public class T03Ejercicio08 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         Scanner entrada = new Scanner(System.in);
         
         int cantidad,aux,billete50,billete20,billete10,billete5,moneda2,moneda1;
