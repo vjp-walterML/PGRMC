@@ -18,29 +18,27 @@ public class T03Ejercicio09 {
         Scanner entrada = new Scanner(System.in);
         
         //Declaro variables
-        String numero,uno,dos,tres,cuatro;
-        int aux,num1,num2,num3,num4;
+        int aux,num1,num2,num3,num4,contador;
         
-        //Pido el numero de 4 cifras
-        System.out.println("Por favor, indique un número de 4 cifras:");
-        numero=entrada.nextLine();
+        //Pido los 4 numeros
+        System.out.println("Por favor, indique el primer numero:");
+        num1=entrada.nextInt();
         
-        //Separo los numeros
-        uno = numero.substring(0, 1);
-        dos = numero.substring(1, 2);
-        tres = numero.substring(2, 3);
-        cuatro = numero.substring(3, 4);
+        System.out.println("Por favor, indique el segundo numero:");
+        num2=entrada.nextInt();
         
-        //Convierto los numeros en String a tipo int para ordenarlos
-        num1 = Integer.parseInt(uno);
-        num2 = Integer.parseInt(dos);
-        num3 = Integer.parseInt(tres);
-        num4 = Integer.parseInt(cuatro);
+        System.out.println("Por favor, indique el tercer numero:");
+        num3=entrada.nextInt();
         
+        System.out.println("Por favor, indique el cuarto numero:");
+        num4=entrada.nextInt();
+
         //Los ordeno mediante el método de la burbuja, tengo que repetir el ciclo 3 veces
-        
-        //Ciclo 1
-        if (num1>num2){
+         
+         
+        //For
+        for(contador=3;contador>=0;contador--){
+            if (num1>num2){
             aux = num1;
             num1 = num2;
             num2 = aux;
@@ -55,39 +53,6 @@ public class T03Ejercicio09 {
             num3 = num4;
             num4 = aux;
         }
-        
-        //Ciclo 2
-        if (num1>num2){
-            aux = num1;
-            num1 = num2;
-            num2 = aux;
-        }
-        if (num2>num3){
-            aux = num2;
-            num2 = num3;
-            num3 = aux;
-        }
-        if (num3>num4){
-            aux = num3;
-            num3 = num4;
-            num4 = aux;
-        }
-        
-        //Ciclo 3
-        if (num1>num2){
-            aux = num1;
-            num1 = num2;
-            num2 = aux;
-        }
-        if (num2>num3){
-            aux = num2;
-            num2 = num3;
-            num3 = aux;
-        }
-        if (num3>num4){
-            aux = num3;
-            num3 = num4;
-            num4 = aux;
         }
         
         //Muestro por pantalla los números ordenados
