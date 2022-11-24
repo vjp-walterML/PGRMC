@@ -14,13 +14,13 @@ public class T03Ejercicio25 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int contador =0;
+        int resultado=0;
         for (int i = 17; i <= 139; i++) {
             if (i % 2 == 0) {
-                contador++;
+                resultado+=i;
             }
         }
-        System.out.println("El total de numeros pares comprendidos entre 17 y 139 es: "+contador);
+        System.out.println("La suma total de numeros pares comprendidos entre 17 y 139 es: "+resultado);
     }
 
 }
