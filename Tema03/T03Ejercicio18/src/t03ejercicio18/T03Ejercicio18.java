@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class T03Ejercicio18 {
 
-    static int PASSWORD = 1234;
+    final static int PASSWORD = 1234;
 
     /**
      * @param args the command line arguments
