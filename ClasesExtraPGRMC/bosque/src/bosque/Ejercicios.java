@@ -2,12 +2,12 @@ package bosque;
 
 public final class Ejercicios { //Si pones final estas diciendo que de esta clase nunca se van a crear objetos, es decir, es una manera de decir que esta clase es estática
 
-    private Ejercicios (){
-        
+    private Ejercicios() {
+
     }
-    
-    private static void pruebaPunteros() {
-        
+
+    public static void pruebaPunteros() {
+        Arbol.tronco = 2;
         final Arbol arbolCentenario = new Arbol(5);
 
         System.out.println("Puntero arbolCentenario: " + arbolCentenario);
