@@ -11,8 +11,14 @@ public class T04Ejercicio11 {
     public static float pedirNumero() {
         Scanner entrada = new Scanner(System.in);
         float num;
-        System.out.println("Por favor, introduzca un numero: ");
-        num = entrada.nextFloat();
+        do {
+            System.out.println("Por favor, introduzca un numero: ");
+            num = entrada.nextFloat();
+            if (num < 0) {
+                System.out.println("ERROR: El numero introducido no puede ser negativo.");
+            }
+        } while (num < 0);
+
         return num;
     }
 
