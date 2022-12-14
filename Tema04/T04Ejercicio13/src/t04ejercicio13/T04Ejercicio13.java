@@ -1,20 +1,47 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package t04ejercicio13;
+
+import java.util.Scanner;
 
 /**
  *
  * @author Walter
  */
 public class T04Ejercicio13 {
-
-    /**
-     * @param args the command line arguments
-     */
+    
+    public static int pedirNum() {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Por favor, introduzca un numero mayor que 1: ");
+        int num = entrada.nextInt();
+        
+        return num;
+    }
+    
+    public static boolean comprobarNum(int num) {
+        boolean mayor = false;
+        if (num > 1) {
+            mayor = true;
+        } else {
+            System.out.println("ERROR: El numero introducido debe ser mayor a 1.");
+        }
+        return mayor;
+    }
+    
+    public static void mostrarResultado(int num) {
+        System.out.println("Los numeros existentes entre el numero 1 y el numero " + num + " son:");
+        
+        for (int i = 1; i <= num; i++) {
+            System.out.println(i);
+        }
+    }
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        int num = pedirNum();
+        
+        while (comprobarNum(num) != true) {
+            num = pedirNum();
+        }
+        
+        mostrarResultado(num);
     }
     
 }
