@@ -34,15 +34,19 @@ public class T04Ejercicio27 {
 
     public static void main(String[] args) {
         String caraAleatoria = caraAleatoria();
+        System.out.println("----------------------JUEGO----------------------");
         String caraUsuario = pedirCara();
         
        while(!caraUsuario.equalsIgnoreCase(caraAleatoria)){
            System.out.println("GAME OVER.La cara aleatoria era "+caraAleatoria+", intentelo de nuevo.");
+           System.out.println("-------------------------------------------------");
+           System.out.println("----------------------JUEGO----------------------");
            caraAleatoria = caraAleatoria();
            caraUsuario = pedirCara();
        }
        
         System.out.println("¡ENHORABUENA! Has acertado.");
+        System.out.println("-------------------------------------------------");
             
         
     }
