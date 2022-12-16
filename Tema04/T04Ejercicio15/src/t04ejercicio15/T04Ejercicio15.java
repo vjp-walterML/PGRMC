@@ -8,20 +8,12 @@ import java.util.Scanner;
  */
 public class T04Ejercicio15 {
 
-    public static int pedirNum1() {
+    public static int pedirNum() {
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Por favor, introduzca el primer numero: ");
+        System.out.println("Por favor, introduzca un numero: ");
         int num1 = entrada.nextInt();
 
         return num1;
-    }
-
-    public static int pedirNum2() {
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Por favor, introduzca el segundo numero: ");
-        int num2 = entrada.nextInt();
-
-        return num2;
     }
 
     public static int mostrarMenu() {
@@ -66,8 +58,8 @@ public class T04Ejercicio15 {
         int num1, num2, opcion;
 
         do {
-            num1 = pedirNum1();
-            num2 = pedirNum2();
+            num1 = pedirNum();
+            num2 = pedirNum();
             opcion = mostrarMenu();
 
             switch (opcion) {

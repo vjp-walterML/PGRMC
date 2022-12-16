@@ -21,7 +21,7 @@ public class T04Ejercicio20 {
 
         acierto = respuesta.equals(SOLUCION1);
 
-        if (acierto == true) {
+        if (acierto) {
             System.out.println("Muy bien, respuesta correcta.");
         } else {
             System.out.println("No es correcto. La respuesta correcta sería: " + SOLUCION1);
@@ -40,7 +40,7 @@ public class T04Ejercicio20 {
 
         acierto = respuesta.equals(SOLUCION2);
 
-        if (acierto == true) {
+        if (acierto) {
             System.out.println("Muy bien, respuesta correcta.");
         } else {
             System.out.println("No es correcto. La respuesta correcta sería: " + SOLUCION2);
@@ -52,10 +52,10 @@ public class T04Ejercicio20 {
     public static void main(String[] args) {
         int nota = 0;
         System.out.println("EXAMEN DE CULTURA GENERAL");
-        if (pregunta1() == true) {
+        if (pregunta1()) {
             nota += 5;
         }
-        if (pregunta2() == true) {
+        if (pregunta2()) {
             nota += 5;
         }
         System.out.println("NOTA DEL EXÁMEN: " + nota);

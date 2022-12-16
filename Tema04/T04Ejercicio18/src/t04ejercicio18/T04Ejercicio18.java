@@ -18,7 +18,7 @@ public class T04Ejercicio18 {
 
     public static void mostrarNombre(String nombre) {
         for (int i = 1; i <= 5; i++) {
-            System.out.println(i+"- "+nombre);
+            System.out.println(i + "- " + nombre);
         }
     }
 
