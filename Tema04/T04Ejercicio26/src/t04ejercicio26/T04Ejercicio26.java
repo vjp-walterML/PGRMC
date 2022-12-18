@@ -19,7 +19,7 @@ public class T04Ejercicio26 {
     public static boolean esPrimo(int num) {
         boolean primo = true;
         int i = 2;
-        while (i < num || primo == true) {
+        while (i < num && primo == true) {
             if (num % i == 0) {
                 primo = false;
             }
