@@ -14,44 +14,48 @@ public class Coche {
     private String modelo;
     private String color;
     private int velocidad;
-    private boolean motorEncendido = false;
+    private boolean motorEncendido;
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setMarca(String mar) {
+        marca = mar;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public void setModelo(String mod) {
+        modelo = mod;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(String col) {
+        color = col;
+    }
+    
+    public void setMotorEncendido() {
+        motorEncendido = false;
     }
 
     public void arrancarCoche() {
-        this.motorEncendido = true;
-        this.velocidad = 10;
+        motorEncendido = true;
+        velocidad = 10;
     }
 
     public void apagarCoche() {
-        this.motorEncendido = false;
-        this.velocidad = 0;
+        motorEncendido = false;
+        velocidad = 0;
     }
     
     public void acelerarCoche(){
-        this.velocidad += 20;
+        velocidad += 20;
     }
     
     public void frenarCoche(){
-        this.velocidad -= 6;
+        velocidad -= 6;
     }
     
     public void getEstado(){
-        System.out.println("----------ESTADO DE----------");
-        System.out.println("Marca: "+this.marca);
-        System.out.println("Modelo: "+this.modelo);
-        System.out.println("Color: "+this.color);
-        System.out.println("Velocidad: "+this.velocidad);
-        System.out.println("MotorEncendido: "+this.motorEncendido);
+        System.out.println("----------ESTADO----------");
+        System.out.println("Marca: "+marca);
+        System.out.println("Modelo: "+modelo);
+        System.out.println("Color: "+color);
+        System.out.println("Velocidad: "+velocidad);
+        System.out.println("MotorEncendido: "+motorEncendido);
     }
 }
