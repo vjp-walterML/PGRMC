@@ -14,6 +14,12 @@ public class Empleado {
     private int horasTrabajadas;
     private int tarifaPorHora;
 
+    public Empleado() {
+        nombre = "";
+        horasTrabajadas = 0;
+        tarifaPorHora = 0;
+    }
+
     public Empleado(String nombre, int horasTrabajadas, int tarifaPorHora) {
         this.nombre = nombre;
         this.horasTrabajadas = horasTrabajadas;
@@ -40,7 +46,7 @@ public class Empleado {
         return horasTrabajadas;
     }
 
-    public double getTarifaPorHora() {
+    public int getTarifaPorHora() {
         return tarifaPorHora;
     }
 
