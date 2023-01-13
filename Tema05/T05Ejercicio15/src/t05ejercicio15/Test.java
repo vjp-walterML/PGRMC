@@ -16,18 +16,18 @@ public class Test {
         System.out.println("===================EMPLEADOS====================");
         System.out.println("-------------------Empleado 1-------------------");
         System.out.println("Nombre: " + empleado1.getNombre());
-        System.out.println("Salario: " + empleado1.getSalario() + "€");
-        System.out.println("Direccion: C/" + empleado1.getDireccion().getCalle() + "/Nº" + empleado1.getDireccion().getNumero()
+        System.out.println("Salario: " + empleado1.getSalario());
+        System.out.println("Direccion: C/" + empleado1.getDireccion().getCalle() + "/N" + empleado1.getDireccion().getNumero()
                 + "/P" + empleado1.getDireccion().getPiso() + "  " + empleado1.getDireccion().getCiudad());
         System.out.println("-------------------Empleado 2-------------------");
         System.out.println("Nombre: " + empleado2.getNombre());
-        System.out.println("Salario: " + empleado2.getSalario() + "€");
-        System.out.println("Direccion: C/" + empleado2.getDireccion().getCalle() + "/Nº" + empleado2.getDireccion().getNumero()
+        System.out.println("Salario: " + empleado2.getSalario());
+        System.out.println("Direccion: C/" + empleado2.getDireccion().getCalle() + "/N" + empleado2.getDireccion().getNumero()
                 + "/P" + empleado2.getDireccion().getPiso() + "  " + empleado2.getDireccion().getCiudad());
         System.out.println("-------------------Empleado 3-------------------");
         System.out.println("Nombre: " + empleado3.getNombre());
-        System.out.println("Salario: " + empleado3.getSalario() + "€");
-        System.out.println("Direccion: C/" + empleado3.getDireccion().getCalle() + "/Nº" + empleado3.getDireccion().getNumero()
+        System.out.println("Salario: " + empleado3.getSalario());
+        System.out.println("Direccion: C/" + empleado3.getDireccion().getCalle() + "/N" + empleado3.getDireccion().getNumero()
                 + "/P" + empleado3.getDireccion().getPiso() + "  " + empleado3.getDireccion().getCiudad());
 
     }
