@@ -32,57 +32,24 @@ public class Test {
                     System.out.println("Has elegido comprar " + producto1.getNombre() + ".");
                     System.out.println("¿Cuantas unidades desea?");
                     unidades = entrada.nextInt();
-
-                    if (comprobarStock(producto1, unidades)) {
-                        cesta += unidades * producto1.getPrecio();
-                        producto1.setStock(producto1.getStock() - unidades);
-                        System.out.println("¡Compra realizada con exito!");
-                        System.out.println("¿Desea comprar otro producto?");
-                        seguirComprando = entradaLine.nextLine();
-
-                        if (seguirComprando.equals("no") || seguirComprando.equals("No")) {
-                            finalizarCompra = true;
-                        }
-                    } else {
-                        System.out.println("Lo sentimos, no disponemos de suficiente stock, actualmente disponemos de " + producto1.getStock() + " " + producto1.getNombre() + ".");
+                    if (actualizarStock(comprobarStock(producto1, unidades), unidades, producto1)) {
+                        finalizarCompra = true;
                     }
                     break;
                 case 2:
                     System.out.println("Has elegido comprar " + producto2.getNombre() + ".");
                     System.out.println("¿Cuantas unidades desea?");
                     unidades = entrada.nextInt();
-
-                    if (comprobarStock(producto2, unidades)) {
-                        cesta += unidades * producto2.getPrecio();
-                        producto2.setStock(producto2.getStock() - unidades);
-                        System.out.println("¡Compra realizada con exito!");
-                        System.out.println("¿Desea comprar otro producto?");
-                        seguirComprando = entradaLine.nextLine();
-
-                        if (seguirComprando.equals("no") || seguirComprando.equals("No")) {
-                            finalizarCompra = true;
-                        }
-                    } else {
-                        System.out.println("Lo sentimos, no disponemos de suficiente stock, actualmente disponemos de " + producto2.getStock() + " " + producto2.getNombre() + ".");
+                    if (actualizarStock(comprobarStock(producto2, unidades), unidades, producto2)) {
+                        finalizarCompra = true;
                     }
                     break;
                 case 3:
                     System.out.println("Has elegido comprar " + producto3.getNombre() + ".");
                     System.out.println("¿Cuantas unidades desea?");
                     unidades = entrada.nextInt();
-
-                    if (comprobarStock(producto3, unidades)) {
-                        cesta += unidades * producto3.getPrecio();
-                        producto3.setStock(producto3.getStock() - unidades);
-                        System.out.println("¡Compra realizada con exito!");
-                        System.out.println("¿Desea comprar otro producto?");
-                        seguirComprando = entradaLine.nextLine();
-
-                        if (seguirComprando.equals("no") || seguirComprando.equals("No")) {
-                            finalizarCompra = true;
-                        }
-                    } else {
-                        System.out.println("Lo sentimos, no disponemos de suficiente stock, actualmente disponemos de " + producto3.getStock() + " " + producto3.getNombre() + ".");
+                    if (actualizarStock(comprobarStock(producto3, unidades), unidades, producto3)) {
+                        finalizarCompra = true;
                     }
                     break;
                 default:
@@ -90,6 +57,27 @@ public class Test {
             }
         }
         System.out.println("El total de su compra asciende a " + cesta + " euros. Muchas gracias por su compra, vuelva cuando quiera.");
+    }
+
+    public static boolean actualizarStock(Boolean stock, int unidades, Producto producto) {
+        Scanner entradaLine = new Scanner(System.in);
+        boolean finalizarCompra = false;
+        String seguirComprando;
+        if (stock) {
+            cesta += unidades * producto.getPrecio();
+            producto.setStock(producto.getStock() - unidades);
+            System.out.println("¡Compra realizada con exito!");
+            System.out.println("¿Desea comprar otro producto?");
+            seguirComprando = entradaLine.nextLine();
+
+            if (seguirComprando.equals("no") || seguirComprando.equals("No")) {
+                finalizarCompra = true;
+            }
+        } else {
+            System.out.println("Lo sentimos, no disponemos de suficiente stock, actualmente disponemos de " + producto.getStock() + " " + producto.getNombre() + ".");
+        }
+
+        return finalizarCompra;
     }
 
     public static boolean comprobarStock(Producto producto, int unidades) {
