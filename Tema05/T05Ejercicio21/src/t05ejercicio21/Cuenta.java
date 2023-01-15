@@ -10,7 +10,7 @@ package t05ejercicio21;
  */
 public class Cuenta {
 
-    private float saldo;
+    protected float saldo;
     private static int numCuentas;
 
     public Cuenta() {

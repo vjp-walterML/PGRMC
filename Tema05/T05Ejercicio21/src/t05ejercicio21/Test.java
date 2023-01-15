@@ -31,15 +31,21 @@ public class Test {
         return entrada.nextFloat();
     }
 
+    public static int pedirClave() {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Por favor, introduzca una clave: ");
+        return entrada.nextInt();
+    }
+
     public static void main(String[] args) {
         boolean salir = false;
-        Cuenta cuenta = null;
+        CuentaClave cuenta = null;
 
         while (!salir) {
             switch (mostrarMenu()) {
                 case 1:
                     if (Cuenta.getNumCuentas() == 0) {
-                        cuenta = new Cuenta();
+                        cuenta = new CuentaClave(pedirClave());
                         System.out.println("¡Cuenta creada con exito!");
                     } else {
                         System.out.println("ERROR: ¡Ya tienes una cuenta creada!");
@@ -47,7 +53,7 @@ public class Test {
                     break;
                 case 2:
                     if (Cuenta.getNumCuentas() == 0) {
-                        cuenta = new Cuenta(pedirCantidad());
+                        cuenta = new CuentaClave(pedirCantidad(),pedirClave());
                         System.out.println("¡Cuenta creada con exito!");
                     } else {
                         System.out.println("ERROR: ¡Ya tienes una cuenta creada!");
