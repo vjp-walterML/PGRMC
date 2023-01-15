@@ -16,9 +16,7 @@ public class Test {
 
     public static void mostrarMenu(Producto producto1, Producto producto2, Producto producto3) {
         Scanner entrada = new Scanner(System.in);
-        Scanner entradaLine = new Scanner(System.in);
         int unidades;
-        String seguirComprando;
         boolean finalizarCompra = false;
 
         //Muestro menu
