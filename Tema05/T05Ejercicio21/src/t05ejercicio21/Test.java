@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package t05ejercicio21;
 
 import java.util.Scanner;
@@ -44,7 +40,7 @@ public class Test {
         while (!salir) {
             switch (mostrarMenu()) {
                 case 1:
-                    if (Cuenta.getNumCuentas() == 0) {
+                    if (cuenta == null) {
                         cuenta = new CuentaClave(pedirClave());
                         System.out.println("¡Cuenta creada con exito!");
                     } else {
@@ -52,15 +48,15 @@ public class Test {
                     }
                     break;
                 case 2:
-                    if (Cuenta.getNumCuentas() == 0) {
-                        cuenta = new CuentaClave(pedirCantidad(),pedirClave());
+                    if (cuenta == null) {
+                        cuenta = new CuentaClave(pedirCantidad(), pedirClave());
                         System.out.println("¡Cuenta creada con exito!");
                     } else {
                         System.out.println("ERROR: ¡Ya tienes una cuenta creada!");
                     }
                     break;
                 case 3:
-                    if (Cuenta.getNumCuentas() == 1) {
+                    if (cuenta != null) {
                         cuenta.ingresar(pedirCantidad());
                         System.out.println("¡Cantidad ingresada con exito!");
                     } else {
@@ -68,14 +64,14 @@ public class Test {
                     }
                     break;
                 case 4:
-                    if (Cuenta.getNumCuentas() == 1) {
+                    if (cuenta != null) {
                         cuenta.extraer(pedirCantidad());
                     } else {
                         System.out.println("ERROR: ¡Primero tienes que crear una cuenta!");
                     }
                     break;
                 case 5:
-                    if (Cuenta.getNumCuentas() == 1) {
+                    if (cuenta != null) {
                         System.out.println("El saldo actual es de " + cuenta.getSaldo() + " euros.");
                     } else {
                         System.out.println("ERROR: ¡Primero tienes que crear una cuenta!");
