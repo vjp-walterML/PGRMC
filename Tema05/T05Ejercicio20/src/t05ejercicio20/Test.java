@@ -27,6 +27,10 @@ public class Test {
         return entrada.nextFloat();
     }
 
+    /*public static boolean existeCuenta(Cuenta cuenta) {
+        return cuenta == null;
+    }*/
+
     public static void main(String[] args) {
         boolean salir = false;
         Cuenta cuenta = null;

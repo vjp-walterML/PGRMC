@@ -17,6 +17,7 @@ public class Empleado {
     public Empleado() {
         nombre = "";
         salario = 0;
+        direccion = new Direccion();
     }
 
     public Empleado(String nombre, int salario, Direccion direccion) {
