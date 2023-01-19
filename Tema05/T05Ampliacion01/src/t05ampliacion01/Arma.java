@@ -10,35 +10,35 @@ package t05ampliacion01;
  */
 public class Arma {
 
-    private String nombre;
+    private String tipo;
     private boolean disponible;
     private static int numeroArmas;
 
-    public Arma() {
-        nombre = "";
-        disponible = false;
+    public Arma(String tipo) {
+        this.tipo = tipo;
+        disponible = true;
         numeroArmas++;
     }
 
-    public Arma(String nombre, boolean disponible) {
-        this.nombre = nombre;
+    public Arma(String tipo, boolean disponible) {
+        this.tipo = tipo;
         this.disponible = disponible;
         numeroArmas++;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String tipo) {
+        this.tipo = tipo;
     }
 
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getTipo() {
+        return tipo;
     }
 
-    public boolean getDisponible() {
+    public boolean isDisponible() {
         return disponible;
     }
 
@@ -50,11 +50,13 @@ public class Arma {
         if (disponible) {
             this.quitarSeguro();
             System.out.println("Utilizando arma.");
+        } else {
+            System.out.println("El arma NO esta disponible.");
         }
     }
 
     public void quitarSeguro() {
-        System.out.println("Quitando el seguro de " + nombre);
+        System.out.println("Quitando el seguro de " + tipo + ".");
     }
 
 }
