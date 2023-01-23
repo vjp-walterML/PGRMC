@@ -28,23 +28,22 @@ public class T06Ejercicio03 {
     public static int pedirLongitud() {
         Scanner entrada = new Scanner(System.in);
         int longitud = 0;
-        boolean letra, longitudValida;
+        boolean error;
         do {
-            letra = true;
-            longitudValida = true;
+            error = false;
             try {
                 System.out.println("Por favor, introduzca una longitud para el vector del 1 al 10:");
                 longitud = entrada.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Error: Has introducido una letra.Por favor, intentelo de nuevo.");
-                letra = false;
+                error = true;
                 entrada.next();
             }
-            if (letra == true && longitud < 1 || longitud > 10) {
+            if (error == false && longitud < 1 || longitud > 10) {
                 System.out.println("Error: Solo son validos los numeros del 1 al 10.Por favor, intentelo de nuevo.");
-                longitudValida = false;
+                error = true;
             }
-        } while (!letra || !longitudValida);
+        } while (error);
 
         return longitud;
     }
