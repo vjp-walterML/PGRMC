@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package t05ejercicio05;
+package t06ejercicio05;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author Walter
  */
-public class T05Ejercicio05 {
+public class T06Ejercicio05 {
 
     public static void rellenarArray(int[][] array) {
         Scanner entrada = new Scanner(System.in);
