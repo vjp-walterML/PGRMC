@@ -49,6 +49,7 @@ public class T06Ejercicio14 {
         }
     }
     
+    
     public static int mediaTemperaturas(int[][] temperaturas) {
         int media = 0;
         for (int i = 0; i < temperaturas.length; i++) {
