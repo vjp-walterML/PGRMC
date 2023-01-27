@@ -11,7 +11,7 @@ package t06ejercicio11;
 public class T06Ejercicio11 {
 
     public static void rellenarArray(int[] array) {
-        boolean repetido = false;
+        boolean repetido;
         for (int i = 0; i < array.length; i++) {
             do {
                 repetido = false;

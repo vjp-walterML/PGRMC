@@ -12,13 +12,13 @@ public class T06Ejercicio10 {
 
     public static void rellenarArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int) Math.round(Math.random() * 8 + 1);
+            array[i] = (int) Math.round(Math.random() * 7 + 1);
         }
     }
 
     public static void sustituirRepetidos(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+            for (int j = i; j < array.length; j++) {
                 if (i != j && array[i] == array[j]) {
                     array[i] = 0;
                     array[j] = 0;
