@@ -21,14 +21,17 @@ public class TresEnRaya {
         //---------------------
         System.out.println("=========BIENVENIDO AL 3 EN RAYA DE WALTER=========");
         pedirNombre();
+        mostrarTablero(tablero);
         do {
             turnoUsuario(tablero);
             mostrarTablero(tablero);
             comprobarJugada(tablero, 'O');
             System.out.println("");//SALTO DE LINEA
-            turnoCPU(tablero);
-            mostrarTablero(tablero);
-            comprobarJugada(tablero, 'X');
+            if (!finPartida) {
+                turnoCPU(tablero);
+                mostrarTablero(tablero);
+                comprobarJugada(tablero, 'X');
+            }
         } while (!finPartida);
     }
 
@@ -47,6 +50,7 @@ public class TresEnRaya {
     }
 
     public static void mostrarTablero(char[][] tablero) {
+        System.out.println("\n-TABLERO-");
         for (int i = 0; i < tablero.length; i++) {
             System.out.println("-------------");
             System.out.print("|");
@@ -64,9 +68,9 @@ public class TresEnRaya {
         do {
             System.out.println("\n-TURNO DE " + nombre.toUpperCase() + "-");
             System.out.print("Elige una fila: ");
-            fila = entrada.nextInt();
+            fila = entrada.nextInt() - 1;
             System.out.print("Elige una columna: ");
-            columna = entrada.nextInt();
+            columna = entrada.nextInt() - 1;
         } while (!comprobarPosicion(fila, columna, tablero));
 
         //ASIGNO LA POSICION AL TABLERO O
@@ -125,9 +129,10 @@ public class TresEnRaya {
         }
         if (tablero[0][0] == jugador && tablero[1][1] == jugador && tablero[2][2] == jugador) {
             ganar = true;
-        }
-        if (tablero[0][2] == jugador && tablero[1][1] == jugador && tablero[2][0] == jugador) {
-            ganar = true;
+        } else {
+            if (tablero[0][2] == jugador && tablero[1][1] == jugador && tablero[2][0] == jugador) {
+                ganar = true;
+            }
         }
 
         //RESULTADO
@@ -135,15 +140,19 @@ public class TresEnRaya {
             finPartida = true;
             System.out.println("¡HABEIS QUEDADO EMPATE!");
             System.out.println("¡GRACIAS POR JUGAR!");
-        }
-        if (ganar && jugador == 'O') {
-            finPartida = true;
-            System.out.println("¡HAS GANADO!");
-            System.out.println("¡GRACIAS POR JUGAR!");
         } else {
-            finPartida = true;
-            System.out.println("LO SIENTO,¡HAS PERDIDO!");
-            System.out.println("¡GRACIAS POR JUGAR!");
+            if (ganar && jugador == 'O') {
+                finPartida = true;
+                System.out.println("¡HAS GANADO!");
+                System.out.println("¡GRACIAS POR JUGAR!");
+            } else {
+                if (ganar && jugador == 'X') {
+                    finPartida = true;
+                    System.out.println("LO SIENTO,¡HAS PERDIDO!");
+                    System.out.println("¡GRACIAS POR JUGAR!");
+                }
+
+            }
         }
 
     }
