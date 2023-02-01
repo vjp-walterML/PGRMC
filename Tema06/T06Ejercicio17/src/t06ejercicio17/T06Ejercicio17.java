@@ -4,8 +4,6 @@
  */
 package t06ejercicio17;
 
-import java.util.Arrays;
-
 /**
  *
  * @author Walter
