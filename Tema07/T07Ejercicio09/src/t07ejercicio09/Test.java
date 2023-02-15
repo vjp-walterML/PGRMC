@@ -38,10 +38,7 @@ public class Test {
     public static void mostrarNotas(Alumno[] aula) {
         for (int i = 0; i < aula.length; i++) { //Recorro alumnos
             System.out.println("====== " + aula[i].getNombreAlumno() + " ======");
-            Asignatura[] notas = aula[i].getNotas(); //Creo Asignatura[] para asignarle las notas de cada uno
-            for (int j = 0; j < notas.length; j++) { //Muestro cada asignatura de cada alumno
-                System.out.println(notas[j].getNombreAsignatura() + ": " + notas[j].getNota());
-            }
+            aula[i].mostrarNotas();
         }
     }
 
@@ -49,13 +46,9 @@ public class Test {
         //Creo vector para almacenar las medias
         float[] notasMedia = new float[aula.length];
 
-        //Calculo las notas medias y relleno el vector
-        for (int i = 0; i < notasMedia.length; i++) {
-            Asignatura[] notas = aula[i].getNotas(); //Creo Asignatura[] para asignarle las notas de cada uno
-            for (int j = 0; j < notas.length; j++) { //Recorro las notas de cada alumno para hacer la media
-                notasMedia[i] += notas[j].getNota();
-            }
-            notasMedia[i] /= notas.length;//Calculo la nota media y la asigno al notasMedia[]
+        //Aisgno las notas medias 
+        for (int j = 0; j < notasMedia.length; j++) {
+            notasMedia[j] = aula[j].calcularMedia();
         }
 
         //Comparo cual es el alumno con la nota media mas alta
@@ -74,14 +67,9 @@ public class Test {
         //Creo vector para almacenar los suspensos de cada alumno
         int[] numeroSuspensos = new int[aula.length];
 
-        //Compruebo las notas y relleno el numeroSuspensos []
-        for (int i = 0; i < numeroSuspensos.length; i++) {
-            Asignatura[] notas = aula[i].getNotas(); //Creo Asignatura[] para asignarle las notas de cada uno
-            for (int j = 0; j < notas.length; j++) { //Recorro las notas de cada alumno para ver los suspensos
-                if (notas[j].getNota() < 5) {
-                    numeroSuspensos[i]++;
-                }
-            }
+        //Relleno numeroSuspensos []
+        for (int j = 0; j < numeroSuspensos.length; j++) {
+            numeroSuspensos[j] = aula[j].numeroSuspensos();
         }
 
         //Comparo cual es el alumno con la nota media mas alta
@@ -119,7 +107,7 @@ public class Test {
         }
 
         //Muestro resultado
-        System.out.println("La asignatura mas dificil es " + nombreAsignaturas[asignaturaDificil]+ " con " + numeroSuspensos[asignaturaDificil] + " suspensos.");
+        System.out.println("La asignatura mas dificil es " + nombreAsignaturas[asignaturaDificil] + " con " + numeroSuspensos[asignaturaDificil] + " suspensos.");
     }
 
     public static void main(String[] args) {

@@ -40,4 +40,29 @@ public class Alumno {
         return notas;
     }
 
+    // METODOS ESPECIALES-------------------------------
+    public void mostrarNotas() {
+        for (int i = 0; i < notas.length; i++) {
+            System.out.println(notas[i].getNombreAsignatura() + ": " + notas[i].getNota());
+        }
+    }
+
+    public float calcularMedia() {
+        float media = 0;
+        for (int i = 0; i < notas.length; i++) {
+            media += notas[i].getNota();
+        }
+        return media / notas.length;
+    }
+
+    public int numeroSuspensos() {
+        int numeroSuspensos = 0;
+        for (int i = 0; i < notas.length; i++) {
+            if (notas[i].getNota() < 5) {
+                numeroSuspensos++;
+            }
+        }
+        return numeroSuspensos;
+    }
+
 }
