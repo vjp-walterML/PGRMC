@@ -49,7 +49,7 @@ public class T10Ejercicio02 {
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> numeros = new ArrayList<Integer>();
+        ArrayList<Integer> numeros = new ArrayList<>();
         System.out.println("=======RELLENAR NUMEROS=======");
         System.out.println("#Para parar de introducir numeros introduzca un numero negativo.");
         rellenarLista(numeros);
