@@ -56,35 +56,24 @@ public class Test {
     }
 
     public static void asignaturaMasDificil(ArrayList<Alumno> alumnos) {
-        //Creo vector auxiliar para almacenar numero suspensos por asignaturas
-        int[] numeroSuspensos = new int[alumnos.get(0).getAsignaturas().length];
-
-        //Relleno numeroSuspensos
-        for (int i = 0; i < alumnos.size(); i++) {
-            //Creo vector asignaturas auxiliar
-            Asignatura[] asignaturas = alumnos.get(i).getAsignaturas();
-            for (int j = 0; j < asignaturas.length; j++) {
-                if (asignaturas[j].getNota() < 5) {
-                    numeroSuspensos[j] += 1;
+        int longitud = alumnos.get(0).getAsignaturas().length;
+        int suspensos;
+        int suspensosMaximos = 0;
+        String asignaturaDificil = "";
+        for (int i = 0; i < longitud; i++) {
+            suspensos = 0;
+            for (Alumno a : alumnos) {
+                Asignatura asignatura = a.getAsignaturas()[i];
+                if (asignatura.getNota() < 5) {
+                    suspensos++;
                 }
             }
-        }
-
-        //Busco cual es el numero de suspensos mas alto 
-        int dificil = numeroSuspensos[0];
-        for (int i = 0; i < numeroSuspensos.length; i++) {
-            if (dificil < numeroSuspensos[i]) {
-                dificil = numeroSuspensos[i];
+            if (suspensos > suspensosMaximos) {
+                suspensosMaximos = suspensos;
+                asignaturaDificil = alumnos.get(0).getAsignaturas()[i].getNombre();
             }
         }
-
-        //muestro la asignatura con mayor numero suspensos
-        int i = 0;
-        while (i < numeroSuspensos.length && dificil != numeroSuspensos[i]) {
-            i++;
-        }
-        System.out.println("La asignatura mas dificil es " + alumnos.get(0).getAsignaturas()[i].getNombre());
-
+        System.out.println("La asignatura mas dificil es " + asignaturaDificil + " con " + suspensosMaximos + " suspensos.");
     }
 
     public static void main(String[] args) {
