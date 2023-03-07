@@ -8,6 +8,8 @@ import java.util.Scanner;
  */
 public class Alumno {
 
+    final static String[] NOMBRE_MATERIAS = {"Lengua", "Mates", "Fisica"};
+
     private String nombre;
     private Asignatura[] asignaturas;
 
@@ -38,31 +40,36 @@ public class Alumno {
     }
 
     //====================METODOS PROPIOS====================
-    /*Método para rellenar el atributo asignaturas, es privado porque solo se puede usar en el constructor,
-     *para añadir mas asignaturas a cada alumno solo es necesario cambiar el nombreMateria[]
-     */
+    //Método para rellenar el atributo asignaturas, es privado porque solo se puede usar en el constructor,
     private Asignatura[] rellenarAsignaturas() {
-        String[] nombreMateria = {"Lengua", "Mates", "Fisica"};
-        Asignatura[] materias = new Asignatura[nombreMateria.length];
+        Asignatura[] materias = new Asignatura[NOMBRE_MATERIAS.length];
         for (int i = 0; i < materias.length; i++) {
-            materias[i] = new Asignatura(nombreMateria[i]);
+            materias[i] = new Asignatura(NOMBRE_MATERIAS[i]);
         }
         return materias;
     }
 
     public void introducirNotas() {
-        Scanner entrada = new Scanner(System.in);
         for (Asignatura a : asignaturas) {
             System.out.print(a.getNombre() + ": ");
-            a.setNota(entrada.nextFloat());
+            a.setNota(pedirNota());
             System.out.println("");//Salto de linea
         }
     }
 
-    public void rellenarAlumno() {
+    public float pedirNota() {
+        Scanner entrada = new Scanner(System.in);
+        return entrada.nextFloat();
+    }
+
+    public String pedirNombre() {
         Scanner entrada = new Scanner(System.in);
         System.out.print("Introduzca su nombre: ");
-        nombre = entrada.nextLine();
+        return entrada.nextLine();
+    }
+
+    public void rellenarAlumno() {
+        nombre = pedirNombre();
         System.out.println("");//Salto de linea
         this.introducirNotas();
     }
