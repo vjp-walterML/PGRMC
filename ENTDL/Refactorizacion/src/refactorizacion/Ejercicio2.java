@@ -5,7 +5,7 @@
 package refactorizacion;
 
 /**
- *
+ * Hola esto es una prueba
  * @author Walter
  */
 public class Ejercicio2 {
@@ -22,6 +22,7 @@ public class Ejercicio2 {
 
     /**
      * @return the num1
+     * 
      */
     public int getNum1() {
         return num1;
