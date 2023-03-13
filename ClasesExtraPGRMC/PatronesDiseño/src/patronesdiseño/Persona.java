@@ -38,7 +38,7 @@ public class Persona {
         private String correoElectronico;
         private String numeroTelefono;
 
-        public PersonaBuilder buildNombre(String nombre) {
+        /*public PersonaBuilder buildNombre(String nombre) {
             this.nombre = nombre;
             return this;
         }
@@ -70,10 +70,61 @@ public class Persona {
 
         public Persona build() {
             return new Persona(nombre, apellido, edad, direccion, correoElectronico, numeroTelefono);
+        }*/
+        public void buildNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+        public void buildApellido(String apellido) {
+            this.apellido = apellido;
+        }
+
+        public void buildEdad(int edad) {
+            this.edad = edad;
+        }
+
+        public void buildDireccion(String direccion) {
+            this.direccion = direccion;
+        }
+
+        public void buildCorreoElectronico(String correoElectronico) {
+            this.correoElectronico = correoElectronico;
+        }
+
+        public void buildNumeroTelefono(String numeroTelefono) {
+            this.numeroTelefono = numeroTelefono;
+        }
+
+        public Persona build() {
+            return new Persona(nombre, apellido, edad, direccion, correoElectronico, numeroTelefono);
         }
 
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+
+    public void setNumeroTelefono(String numeroTelefono) {
+        this.numeroTelefono = numeroTelefono;
+    }
+    
     public String getNombre() {
         return nombre;
     }
