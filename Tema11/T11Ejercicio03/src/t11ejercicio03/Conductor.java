@@ -39,6 +39,7 @@ public class Conductor {
     }
 
     //METODOS PROPIOS
+    //Rellenar
     public void rellenarConductor() {
         System.out.println("=====Conductor=====");
         dni = pedirDni();
@@ -58,6 +59,7 @@ public class Conductor {
         return entrada.nextLine();
     }
 
+    //Mostrar
     public void mostrarConductor() {
         System.out.println("------CONDUCTOR------");
         System.out.println("DNI: " + dni);

@@ -4,8 +4,6 @@
  */
 package t11ejercicio03;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -66,12 +64,18 @@ public class Test {
 
     public static void buscarAutobus(Autobus[] aparcamiento) {
         String matricula = pedirMatricula();
-        for (Autobus autobus : aparcamiento) {
-            if (autobus != null) {
-                if (autobus.getMatricula().equalsIgnoreCase(matricula)) {
-                    autobus.mostrarAutobus();
-                }
+        int i = 0;
+        boolean encontrado = false;
+        while (!encontrado && i < aparcamiento.length) {
+            Autobus autobus = aparcamiento[i];
+            if (autobus != null && autobus.getMatricula().equalsIgnoreCase(matricula)) {
+                autobus.mostrarAutobus();
+                encontrado = true;
             }
+            i++;
+        }
+        if (!encontrado) {
+            System.out.println("No se encontró ningún autobús con la matrícula " + matricula);
         }
     }
 
@@ -98,7 +102,7 @@ public class Test {
 
     public static int autobusMasConductores(Autobus[] aparcamiento) {
         int conductores = 0;
-        int pos = 0;
+        int pos = -1;
         for (int i = 0; i < aparcamiento.length; i++) {
             if (aparcamiento[i] != null) {
                 if (aparcamiento[i].numeroConductores() > conductores) {
@@ -120,25 +124,7 @@ public class Test {
             switch (opcion) {
                 case 1:
                     System.out.println("=======APARCAR AUTOBUS=======");
-                    //aparcarAutobus(aparcamiento);
-                    //Creo  3 Conductores
-                    Conductor c1 = new Conductor("45134320v", "Walter");
-                    Conductor c2 = new Conductor("45189620j", "Jorge");
-                    Conductor c3 = new Conductor("44785320a", "Raquel");
-                    //Creo 2 mapas de conductores
-                    Map<String, Conductor> mapaConductores1 = new HashMap<>();
-                    mapaConductores1.put(c1.getDni(), c1);
-                    mapaConductores1.put(c2.getDni(), c2);
-                    mapaConductores1.put(c3.getDni(), c3);
-                    Map<String, Conductor> mapaConductores2 = new HashMap<>();
-                    mapaConductores1.put(c1.getDni(), c1);
-                    mapaConductores1.put(c2.getDni(), c2);
-                    //Creo 2 autobuses
-                    Autobus a1 = new Autobus("4532BFG", mapaConductores1);
-                    Autobus a2 = new Autobus("5892BFG", mapaConductores2);
-                    //APARCO
-                    aparcamiento[1] = a1;
-                    aparcamiento[5] = a2;
+                    aparcarAutobus(aparcamiento);
                     break;
                 case 2:
                     System.out.println("=======MOSTRANDO PLAZAS LIBRES=======");

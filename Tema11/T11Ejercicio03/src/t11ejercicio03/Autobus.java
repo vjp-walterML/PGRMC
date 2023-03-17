@@ -40,6 +40,7 @@ public class Autobus {
     }
 
     //METODOS PROPIOS
+    //Rellenar
     public void rellenarAutobus() {
         System.out.println("========AUTOBUS========");
         rellenarMatricula();
@@ -68,6 +69,7 @@ public class Autobus {
         return entrada.nextLine().equalsIgnoreCase("si");
     }
 
+    //Mostrar
     public void mostrarAutobus() {
         System.out.println("========AUTOBUS========");
         System.out.println("Matricula: " + matricula);
@@ -83,6 +85,7 @@ public class Autobus {
         }
     }
 
+    //Acciones
     public void buscarConductor(String dni) {
         if (conductores.containsKey(dni)) {
             System.out.println("Conduce el autobus con matricula: " + matricula);
