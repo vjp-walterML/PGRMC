@@ -50,4 +50,10 @@ public class Donacion implements Comparable<Donacion> {
         }
     }
 
+    //===========METODOS PROPIOS===========
+    public void mostrar() {
+        System.out.println("-----Donacion-----");
+        System.out.println("-Nombre: " + nombre);
+        System.out.println("-Cantidad: " + cantidad);
+    }
 }
