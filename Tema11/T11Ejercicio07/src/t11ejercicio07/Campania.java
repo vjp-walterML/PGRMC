@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package t11ejercicio06;
+package t11ejercicio07;
 
 import java.util.Set;
 import java.util.TreeSet;
@@ -13,22 +13,21 @@ import java.util.TreeSet;
  */
 public class Campania {
 
-    private static Campania campaniaCorona;
     private String nombre;
     private Set<Donacion> donaciones;
 
     //CONSTRUCTORES
-    private Campania() {
+    public Campania() {
         nombre = "";
         donaciones = new TreeSet<>();
     }
 
-    private Campania(String nombre) {
+    public Campania(String nombre) {
         this.nombre = nombre;
         this.donaciones = new TreeSet<>();
     }
 
-    private Campania(String nombre, Set<Donacion> donaciones) {
+    public Campania(String nombre, Set<Donacion> donaciones) {
         this.nombre = nombre;
         this.donaciones = donaciones;
     }
@@ -49,20 +48,20 @@ public class Campania {
         return donaciones;
     }
 
-    //PATRON DE DISEÑO SINGLETON
-    public static Campania getInstance() {
-        if (campaniaCorona == null) {
-            campaniaCorona = new Campania();
-        }
-        return campaniaCorona;
-    }
-
     //===============METODOS PROPIOS=================
     public void introducirDonacion(String nombre, float cantidad) {
         donaciones.add(new Donacion(nombre, cantidad));
     }
 
-    public void mostrarDonaciones() {
+    public void mostrarCampania() {
+        System.out.println("*******************");
+        System.out.println("******CAMPAÑA******");
+        System.out.println("*******************");
+        System.out.println("NOMBRE: "+nombre);
+        mostrarDonaciones();
+    }
+
+    private void mostrarDonaciones() {
         for (Donacion donacion : donaciones) {
             donacion.mostrar();
         }
