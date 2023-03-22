@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package t11ejercicio06;
 
 import java.util.Scanner;
@@ -30,6 +26,9 @@ public class Test {
         return entrada.nextInt();
     }
 
+    //OPCIÓN 1=======================================================================
+    /*Al implementar la interfaz comparable en la clase donacion, cuando añadimos 
+    una donacion a la campaña se ordena automaticamente.*/
     public static void anadirDonacion(Campania campania) {
         String nombre;
         float cantidad;
@@ -42,16 +41,18 @@ public class Test {
         } while (seguir());
     }
 
+    //OPCIÓN 2=======================================================================
     public static void mostrarDonaciones(Campania campania) {
         campania.mostrarDonaciones();
     }
 
+    //OPCIÓN 3=======================================================================
     //Metodo que muestra solo las donaciones cuyo nombre coincide
     public static void mostrarDonaciones(Campania campania, String nombre) {
         campania.mostrarDonaciones(nombre);
     }
 
-    //Métodos pedir
+    //METODOS PEDIR---------------------------------------------
     public static boolean seguir() {
         Scanner entrada = new Scanner(System.in);
         System.out.println("¿Desea seguir añadiendo donaciones? ");
@@ -69,10 +70,10 @@ public class Test {
         System.out.println("Introduce la cantidad donada: ");
         return entrada.nextFloat();
     }
+    //-----------------------------------------------------------
 
-    //---------------
     public static void main(String[] args) {
-        //Creo una campaña, utilizando el patron singleton
+        //Patron singleton
         Campania campania = Campania.getInstance();
         campania.setNombre("Campaña #AprobemosPGRMC");
 
@@ -99,7 +100,7 @@ public class Test {
                     break;
                 case 5:
                     System.out.println("=======MOSTRAR TOTAL DINERO RECAUDADO=======");
-                    System.out.println("El total de dinero recaudado en la campaña -"+campania.getNombre()+"- asciende a "+campania.totalRecaudacion()+" euros.");
+                    System.out.println("El total de dinero recaudado en la campaña -" + campania.getNombre() + "- asciende a " + campania.totalRecaudacion() + " euros.");
                     break;
                 case 6:
                     System.out.println("=======ORDENAR DONACIONES=======");

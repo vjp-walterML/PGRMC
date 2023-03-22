@@ -1,18 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package t11ejercicio06;
 
 /**
  *
- * @author Walter
+ * @author Walter Martín Lopes
  */
 public class Donacion implements Comparable<Donacion> {
 
     private String nombre;
     private float cantidad;
 
+    //CONSTRUCTORES
     public Donacion() {
         nombre = "";
         cantidad = 0;
@@ -23,6 +20,7 @@ public class Donacion implements Comparable<Donacion> {
         this.cantidad = cantidad;
     }
 
+    //SETTER Y GETTER
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -39,6 +37,7 @@ public class Donacion implements Comparable<Donacion> {
         return cantidad;
     }
 
+    //Implemento el metodo compareTo para especificar el criterio de ordenacion natural
     @Override
     public int compareTo(Donacion t) {
         if (this.cantidad < t.getCantidad()) {

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package t11ejercicio06;
 
 import java.util.Set;
@@ -17,7 +13,7 @@ public class Campania {
     private String nombre;
     private Set<Donacion> donaciones;
 
-    //CONSTRUCTORES
+    //CONSTRUCTORES (Privados por el patron Singleton)
     private Campania() {
         nombre = "";
         donaciones = new TreeSet<>();
@@ -33,6 +29,7 @@ public class Campania {
         this.donaciones = donaciones;
     }
 
+    //SETTER Y GETTER
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
