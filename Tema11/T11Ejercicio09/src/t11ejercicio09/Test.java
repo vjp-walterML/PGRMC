@@ -132,7 +132,7 @@ public class Test {
     public static void main(String[] args) {
         //Creo Set de sorteos
         Map<LocalDate, Sorteo> sorteos = new TreeMap<>();
-
+  
         int opcion;
         do {
             opcion = mostrarMenu();
