@@ -76,7 +76,6 @@ public class Test {
     }
 
     private static void mostrarMapa(Map<Persona, Integer> mConjunto) {
-        //Persona persona;
         for (Persona persona : mConjunto.keySet()) {
             persona.mostrar();
         }
