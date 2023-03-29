@@ -5,6 +5,7 @@
 package t12ejercicio01;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -47,8 +48,34 @@ public class Test {
         }
     }
 
-    public static void eliminarContactoNumero(int telefono,List<Contacto> agenda) {
-        
+    public static void eliminarContactoNumero(int telefono, List<Contacto> agenda) {
+        int pos = existeContacto(telefono, agenda);
+
+        if (pos >= 0) {
+            agenda.remove(agenda.get(pos));
+            System.out.println("CONTACTO ELIMINADO CORRECTAMENTE");
+        } else {
+            System.out.println("¡CONTACTO NO EXISTENTE! O LA LISTA ESTA VACIA, QUE TAMBIEN PUESER");
+        }
+    }
+
+    //Devuelve la posicion del contacto si existe, sino un numero negativo 
+    public static int existeContacto(int telefono, List<Contacto> agenda) {
+        Contacto contacto;
+        boolean enc = false;
+        int pos = 0;
+        while (pos < agenda.size() && !enc) {
+            contacto = agenda.get(pos);
+            if (contacto.getNumeroMovil() == telefono) {
+                enc = true;
+            } else {
+                pos++;
+            }
+        }
+        if (!enc) {
+            pos = -1;
+        }
+        return pos;
     }
 
     public static int pedirNumero() throws InputMismatchException {
@@ -57,10 +84,15 @@ public class Test {
         return entrada.nextInt();
     }
 
+    public static void mostrarContactosOrdenados(List<Contacto> agenda) {
+        Collections.sort(agenda);
+        mostrarContactos(agenda);
+    }
+
     public static void main(String[] args) {
         List<Contacto> agenda = new ArrayList<>();
 
-        int opcion,telefono;
+        int opcion, telefono;
 
         do {
             try {
@@ -86,10 +118,11 @@ public class Test {
                         System.out.println("Por favor, no introduzcas letras que somos mayorcitos.");
                         telefono = pedirNumero();
                     }
-                    eliminarContactoNumero(telefono,agenda);
+                    eliminarContactoNumero(telefono, agenda);
                     break;
                 case 4:
                     System.out.println("========MOSTRAR CONTACTOS ORDENADOS POR EDAD========");
+                    mostrarContactosOrdenados(agenda);
                     break;
                 case 5:
                     System.out.println("¡HASTA PRONTO!");
@@ -97,7 +130,6 @@ public class Test {
                 default:
                     System.out.println("Por favor, introduzca una opcion valida.");
             }
-
         } while (opcion != 5);
     }
 }
