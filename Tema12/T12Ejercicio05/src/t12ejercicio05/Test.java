@@ -6,6 +6,7 @@ package t12ejercicio05;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -30,12 +31,12 @@ public class Test {
         return entrada.nextInt();
     }
 
-    public static void anadirContacto(File agenda) throws IOException {
+    public static void anadirContacto(File agenda) throws FileNotFoundException, IOException {
         String nombre;
         int edad, telefono;
 
         //Abro flujos
-        FileWriter fw = new FileWriter(agenda);
+        FileWriter fw = new FileWriter(agenda, true);
         PrintWriter pw = new PrintWriter(fw);
 
         //Pido datos
@@ -98,16 +99,18 @@ public class Test {
                 case 1:
                     try {
                     anadirContacto(agenda);
-                    } catch (IOException ex) {
-                        System.out.println("ERROR DE ENTRADA/SALIDA.");
-                    }
+                } catch (IOException ex) {
+                    System.out.println("ERROR DE ENTRADA/SALIDA.");
+                }
                 break;
                 case 2:
                     try {
                     mostrarContactos(agenda);
-                    } catch (IOException ex) {
-                        System.out.println("ERROR DE ENTRADA/SALIDA.");
-                    }
+                } catch (FileNotFoundException ex) {
+                        System.out.println("ERROR, NO SE ENCUENTRA EL FICHERO.");
+                } catch (IOException ex) {
+                    System.out.println("ERROR DE ENTRADA/SALIDA.");
+                }
                 break;
                 case 3:
                     System.out.println("¡HASTA PRONTO!");
