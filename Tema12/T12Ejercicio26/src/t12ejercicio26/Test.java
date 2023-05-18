@@ -60,6 +60,7 @@ public class Test {
                 catalogo.add(auxiliar);
             }
         } catch (EOFException ex) {
+            
         } finally {
             //CIERRO FLUJOS
             fis.close();

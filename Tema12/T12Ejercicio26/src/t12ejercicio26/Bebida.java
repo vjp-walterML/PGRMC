@@ -8,13 +8,16 @@ import java.util.Scanner;
  *
  * @author Walter
  */
-public class Bebida implements Serializable{
+public class Bebida implements Serializable {
 
     private String nombre;
     private float precio;
     private int stock;
 
     public Bebida() {
+        nombre = "";
+        precio = 0;
+        stock = 0;
     }
 
     public Bebida(String nombre, float precio, int stock) {
