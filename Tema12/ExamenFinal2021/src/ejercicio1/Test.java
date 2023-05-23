@@ -19,8 +19,10 @@ import java.util.Scanner;
  */
 public class Test {
 
-    final static File FICHERO = new File("logistica.obj");
+    //FICHERO
+    final private static File FICHERO = new File("logistica.obj");
 
+    //GENERAL
     public static int mostrarMenu() {
         Scanner entrada = new Scanner(System.in);
         int opcion;
@@ -132,6 +134,7 @@ public class Test {
         }
     }
 
+    //MAIN
     public static void main(String[] args) {
         List<Nave> naves = new ArrayList<>();
         int opcion;
