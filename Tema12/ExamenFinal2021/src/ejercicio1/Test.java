@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class Test {
 
     //FICHERO
-    final private static File FICHERO = new File("logistica.obj");
+     private static final File FICHERO = new File("logistica.obj");
 
     //GENERAL
     public static int mostrarMenu() {
@@ -183,5 +183,6 @@ public class Test {
             System.out.println("ERROR ENTRADA/SALIDA.");
         }
         //-------------------------------------------------------
+        
     }
 }
